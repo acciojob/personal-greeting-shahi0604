@@ -1,20 +1,20 @@
-import React, { useState } from "react";
 
-function App() {
-  const [name, setName] = useState("");
+import React,{useState} from "react";
+import './../styles/App.css';
 
+const App = () => {
+  const [name,setName ] = useState('')
   return (
-    <div>
-      {/* Input Field */}
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      {name && <h2>Hello, {name}!</h2>}
-    </div>
-  );
+   <div>
+     <p>Enter your name:</p>
+     <input
+       type="text"
+       value={name}
+       onChange={(e) => setName(e.target.value)}
+     />
+     {name ? <p>Hello {name}!</p> : null}
+   </div>
+  )
 }
 
-export default App;
+export default App
